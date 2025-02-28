@@ -28,7 +28,7 @@
   	<property name="courses" >
   		<map>
   			<entry key="java" value="6 months" />
-  			<entry key="dsa" value="2 months" />
+  			<entry key="android" value="2 months" />
   		</map>
   	</property>
   </bean>
