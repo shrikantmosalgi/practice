@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- this is student bean declaration -->
+  <bean class="com.spring.Employee" name="Employee"> 
+  	<property name="empId" value="5" />
+  	<property name="empName" value="rakesh" />
+  	<property name="empSal" value="50000" />
+  	<property name="empAddresses">
+  	 	<list>
+  	 		<value>kolhapur</value>
+  	 		<value>solapur</value>
+  	 	</list>
+  	</property>
+  	<property name="phones">
+  		<set>
+  			<value>123</value>
+  			<value>456</value>
+  		</set>
+  	</property>
+  	<property name="courses" >
+  		<map>
+  			<entry key="java" value="6 months" />
+  			<entry key="android" value="2 months" />
+  		</map>
+  	</property>
+  </bean>
+  
+</beans>
