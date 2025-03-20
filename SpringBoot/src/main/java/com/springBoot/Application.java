@@ -17,13 +17,9 @@ public class Application {
 		ApplicationContext context =SpringApplication.run(Application.class, args);
 		EmployeeRepository employeeRepository=context.getBean(EmployeeRepository.class);
 		Employee employee=new Employee();
-		employee.setEmpId(2);
-		employee.setEmpName("chiku");
-		employee.setEmpSalary(45000);
-		employee.setEmpAddress("mangalwedha");
 		
-		employeeRepository.save(employee);
-		
+		List<Employee> empList =employeeRepository.findByEmpName("shrikant");
+		System.out.println(empList);
 		
 		
 	}
