@@ -22,7 +22,8 @@ public class Application {
 		List<Employee> empList1 =employeeRepository.findByEmpNameAndEmpAddress("chiku","mangalwedha");
 		List<Employee> empList2 =employeeRepository.getAllEmployee();
 		List<Employee> empList3 =employeeRepository.getEmployeeBySalaryAndAddress(40000,"nandur");
-		System.out.println(empList3);
+		List<Employee> empList4 =employeeRepository.getEmployees();
+		System.out.println(empList4);
 		
 	}
 
