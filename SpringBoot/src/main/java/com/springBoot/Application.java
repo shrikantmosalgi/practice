@@ -19,8 +19,10 @@ public class Application {
 		Employee employee=new Employee();
 		
 		List<Employee> empList =employeeRepository.findByEmpName("shrikant");
-		System.out.println(empList);
-		
+		List<Employee> empList1 =employeeRepository.findByEmpNameAndEmpAddress("chiku","mangalwedha");
+		List<Employee> empList2 =employeeRepository.getAllEmployee();
+		List<Employee> empList3 =employeeRepository.getEmployeeBySalary(40000);
+		System.out.println(empList3);
 		
 	}
 
