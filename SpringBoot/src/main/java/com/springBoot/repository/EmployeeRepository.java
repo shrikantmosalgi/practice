@@ -20,7 +20,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	@Query("select e from Employee e")
 	public List<Employee> getAllEmployee();
 	
-	@Query("select e from Employee e where e.empSalary =:salary")
-	public List<Employee> getEmployeeBySalary(@Param("salary") int empSalary);
+	@Query("select e from Employee e where e.empSalary =:salary and e.empAddress =:address")
+	public List<Employee> getEmployeeBySalaryAndAddress(@Param("salary") int empSalary,@Param("address") String empAddress);
 	
 }
