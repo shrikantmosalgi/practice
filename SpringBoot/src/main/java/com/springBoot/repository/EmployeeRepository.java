@@ -24,6 +24,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	public List<Employee> getEmployeeBySalaryAndAddress(@Param("salary") int empSalary,@Param("address") String empAddress);
 	
 	//Native Query
-	@Query(value="select * from employee",nativeQuery=true)
-	public List<Employee> getEmployees();
+	@Query(value="select * from employee e where e.emp_salary =:salary and e.emp_address =:address",nativeQuery=true)
+	public List<Employee> getEmployeeBySalaryandAddress(@Param("salary") int empSalary,@Param("address") String empAddress);
 }
