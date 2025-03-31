@@ -25,6 +25,7 @@ public class Application {
 		List<Employee> empList4 =employeeRepository.getEmployeeBySalaryandAddress(45000,"mangalwedha");
 		System.out.println(empList4);
 		
+		
 	}
 
 }
