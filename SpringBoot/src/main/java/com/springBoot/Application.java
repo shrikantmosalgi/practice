@@ -18,12 +18,7 @@ public class Application {
 		EmployeeRepository employeeRepository=context.getBean(EmployeeRepository.class);
 		Employee employee=new Employee();
 		
-		List<Employee> empList =employeeRepository.findByEmpName("shrikant");
-		List<Employee> empList1 =employeeRepository.findByEmpNameAndEmpAddress("chiku","mangalwedha");
-		List<Employee> empList2 =employeeRepository.getAllEmployee();
-		List<Employee> empList3 =employeeRepository.getEmployeeBySalaryAndAddress(40000,"nandur");
-		List<Employee> empList4 =employeeRepository.getEmployeeBySalaryandAddress(45000,"mangalwedha");
-		System.out.println(empList4);
+		
 		
 		
 	}
