@@ -64,7 +64,8 @@ public class MainController {
 	
 	@PostMapping("/addEmployee")
 	public void addEmployee(@RequestBody Employee employee) {
-		
+		System.out.println("in addEmployee");
+
 		employeeRepository.save(employee);
 		
 		

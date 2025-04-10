@@ -1,5 +1,7 @@
 package com.springBoot.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
@@ -20,9 +22,9 @@ public class Employee {
 	@Column(name = "emp_address")
 	private String empAddress;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "employee_project", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))
 	@JsonManagedReference
+	@ManyToMany(cascade = CascadeType.ALL) 
+	@JoinTable(name = "employee_project", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))
 	private List<Project> projects;
 
 	public Employee() {

@@ -1,6 +1,9 @@
 package com.springBoot.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -17,11 +20,11 @@ public class Project {
 	@Column(name = "project_language")
 	private String projectLanguage;
 
+	@JsonBackReference
 	@ManyToMany(mappedBy = "projects") /*
 										 * here if we one project can have multiple employee then we need to create
 										 * project_employee table and join it as done in employee class
-										 */
-	@JsonBackReference     
+										 */  
 	private List<Employee> employees;
 
 	public Project() {
