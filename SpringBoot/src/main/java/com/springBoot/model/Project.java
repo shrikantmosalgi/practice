@@ -17,8 +17,11 @@ public class Project {
 	@Column(name = "project_language")
 	private String projectLanguage;
 
-	@ManyToMany(mappedBy = "projects")
-	@JsonBackReference
+	@ManyToMany(mappedBy = "projects") /*
+										 * here if we one project can have multiple employee then we need to create
+										 * project_employee table and join it as done in employee class
+										 */
+	@JsonBackReference     
 	private List<Employee> employees;
 
 	public Project() {
