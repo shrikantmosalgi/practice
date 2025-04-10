@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springBoot.model.Employee;
+import com.springBoot.model.Project;
 import com.springBoot.repository.EmployeeRepository;
+import com.springBoot.repository.ProjectRepository;
 
 
 
@@ -24,6 +26,9 @@ public class MainController {
 
 	@Autowired
 	public EmployeeRepository employeeRepository;
+	
+	@Autowired
+	public ProjectRepository projectRepository;
 
 	@RequestMapping("/home")
 	public String home() {
@@ -40,10 +45,20 @@ public class MainController {
 	
 	@GetMapping("/getAllEmployees")
 	public List<Employee> getEmployees(){
-		
+		System.out.println("in getAllEmployees");
+
 		List<Employee> empList= employeeRepository.findAll();
 		
 		return empList;
+		
+	}
+	@GetMapping("/getAllProjects")
+	public List<Project> getAllProjects(){
+		System.out.println("in getAllProjects");
+
+		List<Project> projectList= projectRepository.findAll();
+		
+		return projectList;
 		
 	}
 	

@@ -1,8 +1,8 @@
 package com.springBoot.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Project {
@@ -10,54 +10,57 @@ public class Project {
 	@Id
 	@Column(name = "project_id")
 	private int projectId;
-	
+
 	@Column(name = "project_name")
 	private String projectName;
-	
+
 	@Column(name = "project_language")
 	private String projectLanguage;
-	
+
+	@ManyToMany(mappedBy = "projects")
+	@JsonBackReference
+	private List<Employee> employees;
+
 	public Project() {
-		
-		// TODO Auto-generated constructor stub
 	}
-	
-	public Project(int projectId, String projectName, String projectLanguage) {
-		
+
+	public Project(int projectId, String projectName, String projectLanguage, List<Employee> employees) {
 		this.projectId = projectId;
 		this.projectName = projectName;
 		this.projectLanguage = projectLanguage;
+		this.employees = employees;
 	}
-	
-	
 
+	// Getters and setters
 	public int getProjectId() {
 		return projectId;
 	}
+
 	public void setProjectId(int projectId) {
 		this.projectId = projectId;
 	}
+
 	public String getProjectName() {
 		return projectName;
 	}
+
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
+
 	public String getProjectLanguage() {
 		return projectLanguage;
 	}
+
 	public void setProjectLanguage(String projectLanguage) {
 		this.projectLanguage = projectLanguage;
 	}
 
-	@Override
-	public String toString() {
-		return "Project [projectId=" + projectId + ", projectName=" + projectName + ", projectLanguage="
-				+ projectLanguage + "]";
+	public List<Employee> getEmployees() {
+		return employees;
 	}
-	
-	
-	
-	
-	
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
 }

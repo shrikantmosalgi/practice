@@ -1,15 +1,11 @@
 package com.springBoot.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Employee {
-
 
 	@Id
 	@Column(name = "emp_id")
@@ -23,25 +19,24 @@ public class Employee {
 
 	@Column(name = "emp_address")
 	private String empAddress;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "project_id")
-	public Project project;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "employee_project", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))
+	@JsonManagedReference
+	private List<Project> projects;
 
 	public Employee() {
-
-		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int empId, String empName, int empSalary, String empAddress, Project project) {
-		super();
+	public Employee(int empId, String empName, int empSalary, String empAddress, List<Project> projects) {
 		this.empId = empId;
 		this.empName = empName;
 		this.empSalary = empSalary;
 		this.empAddress = empAddress;
-		this.project = project;
+		this.projects = projects;
 	}
 
+	// Getters and setters
 	public int getEmpId() {
 		return empId;
 	}
@@ -74,16 +69,11 @@ public class Employee {
 		this.empAddress = empAddress;
 	}
 
-	public Project getProject() {
-		return project;
+	public List<Project> getProjects() {
+		return projects;
 	}
 
-	public void setProject(Project project) {
-		this.project = project;
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
-
-	
-	
-	
-
 }
