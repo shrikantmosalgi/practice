@@ -21,22 +21,38 @@ public class Employee {
 
 	@Column(name = "emp_address")
 	private String empAddress;
+	
+	@OneToOne(cascade =CascadeType.ALL)
+	@JsonManagedReference
+	@JoinColumn(name = "passport_id", referencedColumnName = "passport_id")
+	private Passport passport;
 
 	@JsonManagedReference
-	@ManyToMany(cascade = CascadeType.ALL) 
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "employee_project", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))
-	private List<Project> projects;
+	private List<Project> projects;/*
+									* no need to create column in employee, it is managed by mapping relation is
+									* present in employee_project table, here no need to create employee_project
+									* also because it is just join column
+									*/
 
 	public Employee() {
 	}
 
-	public Employee(int empId, String empName, int empSalary, String empAddress, List<Project> projects) {
+	
+
+	public Employee(int empId, String empName, int empSalary, String empAddress, Passport passport,
+			List<Project> projects) {
+		super();
 		this.empId = empId;
 		this.empName = empName;
 		this.empSalary = empSalary;
 		this.empAddress = empAddress;
+		this.passport = passport;
 		this.projects = projects;
 	}
+
+
 
 	// Getters and setters
 	public int getEmpId() {
@@ -78,4 +94,18 @@ public class Employee {
 	public void setProjects(List<Project> projects) {
 		this.projects = projects;
 	}
+
+
+
+	public Passport getPassport() {
+		return passport;
+	}
+
+
+
+	public void setPassport(Passport passport) {
+		this.passport = passport;
+	}
+	
+	
 }

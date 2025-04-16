@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springBoot.dto.EmployeeDto;
 import com.springBoot.model.Employee;
+import com.springBoot.model.Passport;
 import com.springBoot.model.Project;
 import com.springBoot.repository.EmployeeRepository;
 import com.springBoot.repository.ProjectRepository;
@@ -63,10 +65,29 @@ public class MainController {
 	}
 	
 	@PostMapping("/addEmployee")
-	public void addEmployee(@RequestBody Employee employee) {
+	public void addEmployee(@RequestBody EmployeeDto employeeDto) {
 		System.out.println("in addEmployee");
-
+		Employee employee = new Employee();
+		Passport passport =new Passport();
+		
+		passport.setPassportId(employeeDto.getPassportId());
+		passport.setPassportNumber(employeeDto.getPassportNumber());
+		passport.setCountry(employeeDto.getCountry());
+		
+		employee.setEmpId(employeeDto.getEmpId());
+		employee.setEmpName(employeeDto.getEmpName());
+		employee.setEmpAddress(employeeDto.getEmpAddress());
+		employee.setEmpSalary(employeeDto.getEmpSalary());
+		
+		List<Project> projects = projectRepository.getProjectsById(employeeDto.getProjectIds());
+		employee.setProjects(projects);
+		
+		//passport.setEmployee(employee);
+		
+		employee.setPassport(passport);
+		
 		employeeRepository.save(employee);
+		
 		
 		
 	}
