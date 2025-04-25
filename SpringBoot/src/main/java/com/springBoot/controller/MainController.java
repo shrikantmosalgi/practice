@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.springBoot.dto.EmployeeDto;
 import com.springBoot.model.Employee;
@@ -20,6 +22,7 @@ import com.springBoot.model.Passport;
 import com.springBoot.model.Project;
 import com.springBoot.repository.EmployeeRepository;
 import com.springBoot.repository.ProjectRepository;
+import com.springBoot.utility.Utility;
 
 
 
@@ -31,6 +34,9 @@ public class MainController {
 	
 	@Autowired
 	public ProjectRepository projectRepository;
+	
+	@Autowired
+	private Utility utility;
 
 	@RequestMapping("/home")
 	public String home() {
@@ -42,6 +48,27 @@ public class MainController {
 	public String testApi() {
 		
 		return "this is test api";
+		
+	}
+	
+	@PostMapping("/uploadFile")
+	public void uploadFile(@RequestParam("file") MultipartFile file) {
+		
+		try {
+			System.out.println(file.getOriginalFilename());
+			System.out.println(file.getSize());
+			if(!file.isEmpty()) {
+				boolean f= utility.uploadFile(file);
+				System.out.println("file uploaded");
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
 		
 	}
 	
