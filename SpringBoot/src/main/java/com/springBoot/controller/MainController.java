@@ -51,26 +51,7 @@ public class MainController {
 		
 	}
 	
-	@PostMapping("/uploadFile")
-	public void uploadFile(@RequestParam("file") MultipartFile file) {
-		
-		try {
-			System.out.println(file.getOriginalFilename());
-			System.out.println(file.getSize());
-			if(!file.isEmpty()) {
-				boolean f= utility.uploadFile(file);
-				System.out.println("file uploaded");
-			}
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		
-		
-	}
+	
 	
 	@GetMapping("/getAllEmployees")
 	public List<Employee> getEmployees(){
