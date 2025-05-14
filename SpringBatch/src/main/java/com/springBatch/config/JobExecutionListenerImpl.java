@@ -14,14 +14,14 @@ public class JobExecutionListenerImpl implements JobExecutionListener{
 	
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
-		logger.info("job started");
+		logger.info("csvToDbJobName job started");
 		
 	}
 	
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
-			logger.info("job completed");
+			logger.info("csvToDbJobName job completed");
 		}
 		
 		

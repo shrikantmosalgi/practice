@@ -6,25 +6,31 @@ public class Product {
 	private int productId;
 	private String productName;
 	private String description;
-	private String price;
-	private String discount;
-	private String discountedPrice;
-	
+	private double price;            // Changed
+    private double discount;         // Changed
+    private double discountedPrice;
+    
+    
 	public Product() {
 		
 	}
 
-	
 
-	public Product(int productId, String productName, String description, String price, String discount) {
+
+	public Product(int productId, String productName, String description, double price, double discount,
+			double discountedPrice) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.description = description;
 		this.price = price;
 		this.discount = discount;
-		
+		this.discountedPrice = discountedPrice;
 	}
+
+
+
+
 
 
 
@@ -52,29 +58,36 @@ public class Product {
 		this.description = description;
 	}
 
-	public String getPrice() {
+
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+
+
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public String getDiscount() {
+
+	public double getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(String discount) {
+
+	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 
-	public String getDiscountedPrice() {
+
+	public double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(String discountedPrice) {
+
+	public void setDiscountedPrice(double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
-	
+
 	
 }
