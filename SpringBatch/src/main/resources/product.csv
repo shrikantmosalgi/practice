@@ -1,0 +1,21 @@
+productId,productName,description,price,discount
+1,Product 1,mobile,100,1
+2,Product 2,laptop,200,2
+3,Product 3,pen,300,3
+4,Product 4,paper,400,4
+5,Product 5,pencil,500,5
+6,Product 6,bag,600,6
+7,Product 7,mouse,700,7
+8,Product 8,pc,800,8
+9,Product 9,table,900,9
+10,Product 10,book,1000,10
+11,Product 11,notebook,1100,11
+12,Product 12,cup,1200,12
+13,Product 13,key,1300,13
+14,Product 14,keybord,1400,14
+15,Product 15,screen,1500,15
+16,Product 16,rubber,1600,16
+17,Product 17,marker,1700,17
+18,Product 18,scale,1800,18
+19,Product 19,lite,1900,19
+20,Product 20,printer,2000,20
