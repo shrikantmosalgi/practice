@@ -45,6 +45,7 @@ public class BatchConfig {
                       JdbcCursorItemReader<Product> reader,                      
                       FlatFileItemWriter<Product> writer) {
         return new StepBuilder("dbToFileStep", jobRepository)
+        		.allowStartIfComplete(true)
                 .<Product, Product>chunk(5, transactionManager)
                 .reader(reader)  //if want processor then you can add here
                 .writer(writer)
