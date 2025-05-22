@@ -1,6 +1,8 @@
-package com.springBatch.model;
+package com.springBatch.utility;
 
 import org.springframework.batch.item.ItemProcessor;
+
+import com.springBatch.model.Product;
 
 public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
