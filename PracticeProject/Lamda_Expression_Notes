@@ -1,0 +1,8 @@
+Q.what is lamda?
+-> It is anonymous function which has no Name,no modifier,no return type
+eg. ()->{
+        }
+- it reduces lines of code
+- we can use Lamda expression with only functional interface, without functional inerface we can not use lamda expression      
+- if body of lamda expression contains only one statement then curly braces are optional
+- java compiler enter the type of variable passed in argument, hence type is optional   
