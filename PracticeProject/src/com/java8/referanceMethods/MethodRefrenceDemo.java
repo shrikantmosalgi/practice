@@ -3,7 +3,7 @@ package com.java8.referanceMethods;
 public class MethodRefrenceDemo {
 
 	public static void main(String[] args) {
-
+//method Referance
 		//implementation of TestInterface
 		
 		TestInterface testInterface =Work::doWork; //here it uses method from work class for implementation of method in TestInterface
