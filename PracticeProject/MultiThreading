@@ -1,0 +1,33 @@
+#multi threading is a process of executing multiple threads simultaneously
+-Thread -> is light weight sub process,the smallest unit of processing
+-any process contains atleast one thread which called main thread
+
+#Creating Threads in java(2 ways)
+1.Using Runnable Interface 2.Using Thread class
+-Thread class implements Runnable Interface
+-when we create thread by using Runnable interface then we need to create 
+ Thread Class object and need to provide our thread object to it,because Runnable Interface dose not Have start()
+-advantage of using Runnable interface is we can extend another class also
+-When we create thread using Thread Class then we need to write run() method manually
+ 
+# Thread life cycle
+
+ New   -> Runnable -> Running -> Terminated
+ 	      	|             |
+          	 <- Blocked  <-
+# Thread scheduler schedule the threads it gives specific time to execute each thread it is called "time slice" or "time quantum"       	 
+#Thread class provides methods to perform operations with threads
+- Thread class is available in java.lang package
+- Methods - getName(), setName(),run(), start(), getId(), sleep(),join(),interrupt(),resume(),stop()
+#Daemon Thread
+- Daemon thread in java is service provider thread that provides services to user thread
+- Daemon thread life cycle depends on another thread
+- We can make any thread Daemon Thread
+- eg. Garbage collector is example of Daemon thread      	 
+
+#Synchronized thread
+- synchronized is a keyword used to ensure that only one thread at a time can execute a critical section of code 
+  that accesses shared resources.
+- To prevent race conditions and ensure thread safety when multiple threads access shared data simultaneously
+- two types for synchronization in java synchronized method and synchronized block 
+- method synchronization synchronizeentire method and block synchronize particular block of code
