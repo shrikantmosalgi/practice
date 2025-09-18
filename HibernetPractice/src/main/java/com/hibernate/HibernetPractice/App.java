@@ -20,8 +20,7 @@ public class App
     {
         System.out.println( "project started" );
         
-        
-        
+      
         Student student =new Student();
         student.setId(1);
         student.setName("jakob");
