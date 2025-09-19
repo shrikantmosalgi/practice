@@ -53,10 +53,7 @@ public class App
                                                           //and load() when we are confirm that object is present in db       
        System.out.println(address1.getCity() + " , " + address1.getAddressId());
        
-       session.close();
-       
-       
-        
-        System.out.println(student);
+       session.close();        
+       System.out.println(student);
     }
 }
