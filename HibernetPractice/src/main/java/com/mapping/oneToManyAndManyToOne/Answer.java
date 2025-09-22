@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="answer_one_to_many")
-public class AnswerOneToMany {
+public class Answer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answer_seq")
@@ -22,13 +22,13 @@ public class AnswerOneToMany {
 	private String answer;
 	
 	@ManyToOne
-	private QuestionOneToMany question;
+	private Question question;
 
-	public AnswerOneToMany() {
+	public Answer() {
 		
 	}
 
-	public AnswerOneToMany(int answerId, String answer) {
+	public Answer(int answerId, String answer) {
 		
 		this.answerId = answerId;
 		this.answer = answer;
@@ -50,11 +50,11 @@ public class AnswerOneToMany {
 		this.answer = answer;
 	}
 
-	public QuestionOneToMany getQuestion() {
+	public Question getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(QuestionOneToMany question) {
+	public void setQuestion(Question question) {
 		this.question = question;
 	}
 	

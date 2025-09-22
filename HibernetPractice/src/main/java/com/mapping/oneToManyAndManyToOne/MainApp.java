@@ -13,20 +13,20 @@ public class MainApp {
 
 		
 		
-	       QuestionOneToMany q1= new QuestionOneToMany();
+	       Question q1= new Question();
 	       
 	       q1.setQuestion("what is java");
 	       
-	       AnswerOneToMany a1 = new AnswerOneToMany();
+	       Answer a1 = new Answer();
 	       a1.setAnswer("java is programming language");
 	       a1.setQuestion(q1);
 	       
-	       AnswerOneToMany a2 = new AnswerOneToMany();	      
+	       Answer a2 = new Answer();	      
 	       a2.setAnswer("using java we can create softwares");
 	       a2.setQuestion(q1);
 	    
 	       
-	       List<AnswerOneToMany> answerList = new ArrayList<>();
+	       List<Answer> answerList = new ArrayList<>();
 	       answerList.add(a1);
 	       answerList.add(a2);
 	       
