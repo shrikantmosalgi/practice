@@ -17,6 +17,15 @@
         <!-- Show SQL in console -->
         <property name="hibernate.show_sql">true</property>
         <!-- <property name="hibernate.format_sql">true</property> -->
+        
+
+	        <!-- Mapped entity classes -->
+	        <mapping class="com.mapping.Answer" />
+	        <mapping class="com.mapping.Question" />
+	        <mapping class="com.mapping.manyToMany.Employee" />
+	        <mapping class="com.mapping.manyToMany.Project" />
+	        <mapping class="com.mapping.oneToManyAndManyToOne.Answer" />
+	        <mapping class="com.mapping.oneToManyAndManyToOne.Question" />
 
     </session-factory>
 </hibernate-configuration>
