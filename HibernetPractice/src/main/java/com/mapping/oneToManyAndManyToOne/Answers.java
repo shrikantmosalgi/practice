@@ -1,17 +1,16 @@
 package com.mapping.oneToManyAndManyToOne;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="answer_one_to_many")
-public class Answer {
+public class Answers {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answer_seq")
@@ -22,13 +21,13 @@ public class Answer {
 	private String answer;
 	
 	@ManyToOne
-	private Question question;
+	private Questions question;
 
-	public Answer() {
+	public Answers() {
 		
 	}
 
-	public Answer(int answerId, String answer) {
+	public Answers(int answerId, String answer) {
 		
 		this.answerId = answerId;
 		this.answer = answer;
@@ -50,11 +49,11 @@ public class Answer {
 		this.answer = answer;
 	}
 
-	public Question getQuestion() {
+	public Questions getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(Question question) {
+	public void setQuestion(Questions question) {
 		this.question = question;
 	}
 	

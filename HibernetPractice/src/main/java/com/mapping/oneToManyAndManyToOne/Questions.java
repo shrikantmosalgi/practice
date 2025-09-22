@@ -2,21 +2,20 @@ package com.mapping.oneToManyAndManyToOne;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-@Table(name ="question_one_to_many")
-public class Question {
+public class Questions {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")
@@ -25,13 +24,13 @@ public class Question {
 	private int questionId;
 	private String question;
 	@OneToMany(mappedBy ="question",cascade = CascadeType.ALL)
-	private List<Answer> answers;
+	private List<Answers> answers;
 	
-	public Question() {
+	public Questions() {
 		
 	}
 
-	public Question(int questionId, String question, List<Answer> answers) {
+	public Questions(int questionId, String question, List<Answers> answers) {
 		
 		this.questionId = questionId;
 		this.question = question;
@@ -54,11 +53,11 @@ public class Question {
 		this.question = question;
 	}
 
-	public List<Answer> getAnswers() {
+	public List<Answers> getAnswers() {
 		return answers;
 	}
 
-	public void setAnswers(List<Answer> answers) {
+	public void setAnswers(List<Answers> answers) {
 		this.answers = answers;
 	}
 

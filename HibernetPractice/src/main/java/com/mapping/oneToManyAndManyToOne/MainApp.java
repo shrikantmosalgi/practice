@@ -13,20 +13,20 @@ public class MainApp {
 
 		
 		
-	       Question q1= new Question();
+	       Questions q1= new Questions();
 	       
 	       q1.setQuestion("what is java");
 	       
-	       Answer a1 = new Answer();
+	       Answers a1 = new Answers();
 	       a1.setAnswer("java is programming language");
 	       a1.setQuestion(q1);
 	       
-	       Answer a2 = new Answer();	      
+	       Answers a2 = new Answers();	      
 	       a2.setAnswer("using java we can create softwares");
 	       a2.setQuestion(q1);
 	    
 	       
-	       List<Answer> answerList = new ArrayList<>();
+	       List<Answers> answerList = new ArrayList<>();
 	       answerList.add(a1);
 	       answerList.add(a2);
 	       

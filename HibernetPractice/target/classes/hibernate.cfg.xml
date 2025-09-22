@@ -5,8 +5,8 @@
         <!-- JDBC connection settings -->
         <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:Xstore</property>
-        <property name="hibernate.connection.username">shrikant</property>
-        <property name="hibernate.connection.password">shrikant</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">system</property>
 
         <!-- Hibernate dialect for Oracle -->
         <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
@@ -17,6 +17,15 @@
         <!-- Show SQL in console -->
         <property name="hibernate.show_sql">true</property>
         <!-- <property name="hibernate.format_sql">true</property> -->
+        
+
+	        <!-- Mapped entity classes -->
+	        <mapping class="com.mapping.Answer" />
+	        <mapping class="com.mapping.Question" />
+	        <mapping class="com.mapping.manyToMany.Employee" />
+	        <mapping class="com.mapping.manyToMany.Project" />
+	        <mapping class="com.mapping.oneToManyAndManyToOne.Answers" />
+	        <mapping class="com.mapping.oneToManyAndManyToOne.Questions" />
 
     </session-factory>
 </hibernate-configuration>
