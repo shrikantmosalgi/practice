@@ -11,6 +11,7 @@ import com.springBoot.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
 	//derived query or custom finder methods
+	public Employee findByEmpId(int empId);
 	public List<Employee> findByEmpName(String empName);
 	public List<Employee> findByEmpNameAndEmpAddress(String empName,String empAddess);
 	public List<Employee> findByEmpNameStartingWith(String empName);

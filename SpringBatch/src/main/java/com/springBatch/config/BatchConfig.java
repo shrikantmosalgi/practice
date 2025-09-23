@@ -21,8 +21,8 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import com.springBatch.model.CustomItemProcessor;
 import com.springBatch.model.Product;
+import com.springBatch.utility.CustomItemProcessor;
 
 @Configuration
 public class BatchConfig {

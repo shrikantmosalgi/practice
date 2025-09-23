@@ -1,0 +1,25 @@
+Q.what is lamda?
+-> It is anonymous function which has no Name,no modifier,no return type
+eg. ()->{
+        }
+- it reduces lines of code
+- we can use Lamda expression with only functional interface, without functional inerface we can not use lamda expression      
+- if body of lamda expression contains only one statement then curly braces are optional
+- java compiler enter the type of variable passed in argument, hence type is optional 
+
+Q.functional interface
+-> if interface contains only one abstract method then it is functional interface
+-to call lamda we require functional interface
+- lamda is used to implement functional interface only, if interface has multiple methods then we have to use anonymous class
+eg.Runnabe,Callale,Comparable  
+
+##Stream Api
+- These streams are related to collection framework(Group of object)
+-these are diffrent from IO streams, IO streams are sequence of data, IO streams are used to write data
+
+##method Reference 
+-this is special type of lamda expression
+-this is used to create simple lamda expressions by referencing existing methods
+- symbol is  ::
+-types of method references
+1.static methods 2.instance methods of perticular objects 3.constructor

@@ -102,6 +102,7 @@ public class MainController {
 	
 	@DeleteMapping("/deleteEmployee/{id}")
 	public void deleteEmployee(@PathVariable("id") int empid) {
+		employeeRepository.deleteById(empid);
 		
 	}
 }
